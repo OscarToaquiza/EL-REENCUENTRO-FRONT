@@ -1,0 +1,167 @@
+<header class="top-navbar">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="assets/images/granja/logo_web.png" alt="el_reencuentro_logo" width="80%" />
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-host"
+                aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbars-host">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item" routerLinkActive="active"><a class="nav-link" routerLink="inicio">Inicio</a>
+                    </li>
+                    <li class="nav-item dropdown" routerLinkActive="active">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Acerca</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown-a">
+                            <a class="dropdown-item" routerLink="historia">Historia</a>
+                            <a class="dropdown-item" routerLink="mision">Misión</a>
+                            <a class="dropdown-item" routerLink="vision">Visón</a>
+                        </div>
+                    </li>
+                    <li routerLinkActive="active" class="nav-item"><a class="nav-link" routerLink="galeria">Galeria</a>
+                    </li>
+                    <li class="nav-item dropdown" routerLinkActive="active">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown-a"
+                            data-toggle="dropdown">Actividades</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown-a">
+                            <a class="dropdown-item" routerLink="pared-escalda">Pared de Escalada</a>
+                            <!-- <a class="dropdown-item" routerLink="mision" >Misión</a>
+                            <a class="dropdown-item"routerLink="vision">Visón</a> -->
+                        </div>
+                    </li>
+                    <li routerLinkActive="active" class="nav-item"><a class="nav-link"
+                            routerLink="ubicacion">Ubicación</a></li>
+                    <li routerLinkActive="active" class="nav-item"><a class="nav-link"
+                            routerLink="contactos">Contacto</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a class="hover-btn-new log orange" href="#" data-toggle="modal"
+                            data-target="#login"><span>Reservas</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+<!-- Modal -->
+<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <img class="img-responsive" src="assets/images/granja/el_reencuentro_txt.png" alt=""
+                style="position: absolute;">
+            <div class="modal-header tit-up" style="min-height: 100px;">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+
+
+            </div>
+            <div class="modal-body customer-box">
+                <div class="tab-pane" id="Registration">
+                    <form role="form" class="form-horizontal"
+                    [formGroup]="reservaForm" 
+                    (submit)="enviarMsg()"
+                    >
+                        <div class="text-center">
+                            <h4>RESERVACIONES</h4>
+                        </div>
+                        <hr>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-6 col-lg-6">
+                                    <label>Nombres:</label>
+                                    <input class="form-control" placeholder="Nombres" type="text"
+                                    formControlName="nombres"
+                                    >
+                                    <small *ngIf="campoValido('nombres')" class="text-danger" >
+                                        Este campo es obligatorio
+                                    </small>
+                                </div>
+                                <div class="col-sm-12 col-md-6 col-lg-6 ">
+                                    <label>Apellidos:</label>
+                                    <input class="form-control" placeholder="Apellidos" type="text"
+                                    formControlName="apellidos"
+                                    >
+                                    <small *ngIf="campoValido('apellidos')" class="text-danger" >
+                                        Este campo es obligatorio
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-6 col-lg-6">
+                                    <label>Correo electrónico</label>
+                                    <input class="form-control" placeholder="Correo electronico" type="email"
+                                    formControlName="correo"
+                                    >
+                                    <small *ngIf="campoValido('correo')" class="text-danger" >
+                                        El correo no es válido, debe ser obligatorio
+                                    </small>
+                                </div>
+                                <div class="col-sm-12 col-md-6 col-lg-6 ">
+                                    <label>Telefono:</label>
+                                    <input class="form-control" placeholder="Telefono contacto" type="text"
+                                    formControlName="telefono"
+                                    >
+                                    <small *ngIf="campoValido('apellidos')" class="text-danger" >
+                                        Este campo es obligatorio
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-6 col-lg-6">
+                                    <label>Fecha Prevista</label>
+                                    <input class="form-control" type="date"
+                                    formControlName="fechaPrevista"
+                                    >
+                                    <small *ngIf="campoValido('apellidos')" class="text-danger" >
+                                        Este campo es obligatorio
+                                    </small>
+                                </div>
+                                <div class="col-sm-12 col-md-6 col-lg-6 ">
+                                    <label>Número de Personas</label>
+                                    <input class="form-control" placeholder="1" type="number"
+                                    formControlName="numPersonas"
+                                    >
+                                    <small *ngIf="campoValido('apellidos')" class="text-danger" >
+                                        Este campo es obligatorio
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <label>Obervación adicional:</label>
+                                <input class="form-control" placeholder="Observacion" type="text"
+                                formControlName="observacion"
+                                >
+                                <small *ngIf="campoValido('apellidos')" class="text-danger" >
+                                    Este campo es obligatorio
+                                </small>
+                            </div>
+                        </div>
+                        <div class="row text-center">
+
+                            <button type="submit" class="btn btn-light btn-radius btn-brd grd1">
+                                Enviar
+                            </button>
+                            <button type="button" class="btn btn-light btn-radius btn-brd grd1" data-dismiss="modal"
+                                aria-hidden="true">
+                                Cancelar
+                            </button>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
