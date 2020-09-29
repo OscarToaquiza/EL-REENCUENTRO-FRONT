@@ -16,6 +16,7 @@ export class GaleryComponent implements AfterViewInit {
       effect: 'coverflow',
       grabCursor: true,
       centeredSlides: true,
+      initialSlide:3,
       slidesPerView: 'auto',
       coverflowEffect: {
         rotate: 50,
