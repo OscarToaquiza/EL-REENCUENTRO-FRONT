@@ -77,7 +77,11 @@
     "rutaEcologico":{
         "rutaEcologico":"Rutas Ecológicas"
     },
-    "ubicacion":"ubicación",
+    "ubicacion":{
+        "ubicacion":"ubicación",
+        "referencias":"Referencias para llegar ...",
+        "comoLlegar":"¿Como llegar? desde mi ubicación"
+    },
     "contacto":{
         "contacto":"Contactos",
         "cabecera":"Envia sugerencias, problemas o información estaremos gustosos de responder tus mensajes.",

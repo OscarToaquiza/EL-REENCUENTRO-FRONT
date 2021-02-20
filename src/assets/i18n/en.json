@@ -77,7 +77,11 @@
     "rutaEcologico":{
         "rutaEcologico":"ECOLOGICAL PATHWAY"
     },
-    "ubicacion":"location",
+    "ubicacion":{
+        "ubicacion":"location",
+        "referencias":"References to get there ...",
+        "comoLlegar":"How to get? from my location"
+    },
     "contacto":{
         "contacto":"Contacts",
         "cabecera":"Send suggestions, problems or information, we will be happy to answer your messages.",
