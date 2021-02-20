@@ -16,7 +16,7 @@ export class ContactService {
   }
 
   enviarCorreoContacto( data:any ){
-    const url = `${base_url}/send/email/conacto`;
+    const url = `${base_url}/send/email/contacto`;
     return this.http.post(url, data);
   }
 

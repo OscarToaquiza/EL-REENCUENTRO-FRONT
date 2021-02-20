@@ -1,0 +1,120 @@
+<div id="carouselExampleControls" class="carousel slide bs-slider box-slider" data-ride="carousel" data-interval="3000" >
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleControls" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleControls" data-slide-to="1"></li>
+        <li data-target="#carouselExampleControls" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+        <div class="carousel-item active">
+            <div id="home" class="first-section" style="background-image:url('assets/images/fotos/el_reencuentro_casa_puente.jpeg');">
+                <div class="dtab">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 text-center">
+                                <div class="big-tagline">
+                                    <div>
+                                        <img class="img-responsive" src="assets/images/granja/el_reencuentro_txt.png" alt="el_reencuentro_logo">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>   
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div id="home" class="first-section" style="background-image:url('assets/images/fotos/restaurante/el_reencuentro_restaurante_2.jpeg');">
+                <div class="dtab">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 text-center">
+                                <div class="big-tagline">
+                                    <div>
+                                        <img class="img-responsive" src="assets/images/granja/el_reencuentro_txt.png" alt="el_reencuentro_logo">
+                                    </div>
+                                    <!-- <a  routerLink="/actividades-general/restaurante"  class="hover-btn-new"><span>Restaurante</span></a> -->
+                                </div>
+                            </div>
+                        </div>       
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div id="home" class="first-section" style="background-image:url('assets/images/fotos/el_reencuentro_pared_escalada_3.jpeg');">
+                <div class="dtab">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 text-center">
+                                <div class="big-tagline">
+                                    <div>
+                                        <img class="img-responsive" src="assets/images/granja/el_reencuentro_txt.png" alt="el_reencuentro_logo">
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                        </div>        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Left Control -->
+        <a class="new-effect carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="fa fa-angle-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+
+        <!-- Right Control -->
+        <a class="new-effect carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="fa fa-angle-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>
+
+<div class="section cl">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="text-white" >
+                    {{ 'home.texto' | transloco}}
+                </h2>
+                <h2 class="text-white texto-italic" >
+                    {{ 'home.frase' | transloco }}
+                </h2>
+            </div>
+        </div>
+        <div class="row text-left stat-wrap">
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <a routerLink="/actividades-general/granja" >
+                    <span data-scroll class="global-radius icon_wrap effect-1 alignleft">
+                        <img width="80%" src="assets/images/pueblo.svg" >
+                    </span>
+                    <br>
+                    <h3 class="font-500" >{{ 'home.granja' | transloco  }}</h3>
+                </a>
+            </div>
+
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <a routerLink="/actividades-general/sendero-ecologico" >
+                <span data-scroll class="global-radius icon_wrap effect-1 alignleft">
+                    <img width="80%" src="assets/images/viaje.svg" >
+                </span>
+                <br>
+                <h3 class="font-500" >{{ 'home.aventura' | transloco  }}</h3>
+            </a>
+            </div>
+
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <a routerLink="/actividades-general/camping" >
+                <span data-scroll class="global-radius icon_wrap effect-1 alignleft">
+                    <img width="80%" src="assets/images/verde.svg" >
+                </span>
+                <br>
+                <h3 class="font-500">{{ 'home.naturaleza' | transloco  }}</h3>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

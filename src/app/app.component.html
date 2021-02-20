@@ -4,3 +4,15 @@
 <app-footer></app-footer>
 <a href="https://api.whatsapp.com/send?phone=593995823200&text=El%20Reencuentro,%20bienvenido,%20necesito%20m%C3%A1s%20informaci%C3%B3n" 
 class="whatsapp" title="Mensaje por Whatsapp" target="_blank"> <i class="fa fa-whatsapp whatsapp-icon"></i></a>
+
+<div class="lng">
+    <select class="form-control" 
+        [ngClass]=" selectLang === 'en'  ? 'imgLanguageEn' : 'imgLanguageEs' "   
+        [ngModel]="selectLang"
+        (ngModelChange)="selectLanguage($event)">
+        <option value="es"> {{ 'LANGUAGE.ES' | transloco }}</option>
+        <option value="en"> {{ 'LANGUAGE.EN' | transloco }} </option>
+    </select>
+  </div>
+
+

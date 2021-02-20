@@ -4,36 +4,61 @@
             <a class="navbar-brand" href="#">
                 <img src="assets/images/granja/logo_web.png" alt="el_reencuentro_logo" width="80%" />
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-host"
-                aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navbars-rs-food" 
+            aria-expanded="false" aria-label="Toggle navigation"  (click)="collapsed()" >
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbars-host">
+            <div class="collapse navbar-collapse" [ngClass]="{ 'show': expanded }" >
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item" routerLinkActive="active"><a class="nav-link" routerLink="inicio">Inicio</a>
+                     <li class="nav-item" routerLinkActive="active">
+                        <a class="nav-link" routerLink="inicio" (click)="collapsed()"    >
+                            {{ 'inicio' | transloco }}
+                        </a>
                     </li>
                     <li class="nav-item dropdown" routerLinkActive="active">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Acerca</a>
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">
+                            {{ 'acerca.acerca' | transloco }}
+                        </a>
                         <div class="dropdown-menu" aria-labelledby="dropdown-a">
-                            <a class="dropdown-item" routerLink="historia">Historia</a>
-                            <a class="dropdown-item" routerLink="mision">Misión</a>
-                            <a class="dropdown-item" routerLink="vision">Visón</a>
+                            <a class="dropdown-item" routerLink="acerca/historia" (click)="collapsed()" >
+                                {{ 'acerca.historia' | transloco }}
+                            </a>
+                            <a class="dropdown-item" routerLink="acerca/mision" (click)="collapsed()" >
+                                {{ 'acerca.mision' | transloco }}
+                            </a>
+                            <a class="dropdown-item" routerLink="acerca/vision" (click)="collapsed()" >
+                                {{ 'acerca.vision' | transloco }}
+                            </a>
                         </div>
                     </li>
-                    <li routerLinkActive="active" class="nav-item"><a class="nav-link" routerLink="galeria">Galeria</a>
+                    <li routerLinkActive="active" class="nav-item">
+                        <a class="nav-link" routerLink="galeria" (click)="collapsed()" >
+                            {{ 'galeria.galeria' | transloco}}
+                        </a>
                     </li>
                     <li routerLinkActive="active" class="nav-item"><a class="nav-link"
-                        routerLink="actividades-general">Actividades</a></li>
+                        routerLink="actividades-general" (click)="collapsed()" >
+                        {{ 'actividades.actividades' | transloco }}
+                    </a></li>
                     <li routerLinkActive="active" class="nav-item"><a class="nav-link"
-                            routerLink="ubicacion">Ubicación</a></li>
+                            routerLink="ubicacion" (click)="collapsed()" >
+                        {{ 'ubicacion'  | transloco}}
+                        </a></li>
                     <li routerLinkActive="active" class="nav-item"><a class="nav-link"
-                            routerLink="contactos">Contacto</a></li>
+                            routerLink="contactos" (click)="collapsed()" >
+                        {{ 'contacto.contacto' | transloco }}
+                        </a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a class="hover-btn-new log orange" href="#" data-toggle="modal"
-                            data-target="#login"><span>Reservas</span></a></li>
+                            data-target="#login">
+                            <span>
+                                {{ 'reservas.reservas' | transloco }}
+                            </span>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -59,27 +84,29 @@
                     (submit)="enviarMsg()"
                     >
                         <div class="text-center">
-                            <h4>RESERVACIONES</h4>
+                            <h4>
+                                {{ 'reservas.reservas' | transloco }}
+                            </h4>
                         </div>
                         <hr>
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-sm-12 col-md-6 col-lg-6">
-                                    <label>Nombres:</label>
-                                    <input class="form-control" placeholder="Nombres" type="text"
+                                    <label>{{ 'reservas.nombres' | transloco}}:</label>
+                                    <input class="form-control" placeholder="{{ 'reservas.nombres' | transloco}}" type="text"
                                     formControlName="nombres"
                                     >
                                     <small *ngIf="campoValido('nombres')" class="text-danger" >
-                                        Este campo es obligatorio
+                                        {{ 'reservas.campoObligatorio' | transloco }}
                                     </small>
                                 </div>
                                 <div class="col-sm-12 col-md-6 col-lg-6 ">
-                                    <label>Apellidos:</label>
-                                    <input class="form-control" placeholder="Apellidos" type="text"
+                                    <label>{{ 'reservas.apellidos' | transloco }}:</label>
+                                    <input class="form-control" placeholder="{{ 'reservas.apellidos' | transloco }}" type="text"
                                     formControlName="apellidos"
                                     >
                                     <small *ngIf="campoValido('apellidos')" class="text-danger" >
-                                        Este campo es obligatorio
+                                        {{ 'reservas.campoObligatorio' | transloco }}
                                     </small>
                                 </div>
                             </div>
@@ -88,21 +115,21 @@
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-sm-12 col-md-6 col-lg-6">
-                                    <label>Correo electrónico</label>
-                                    <input class="form-control" placeholder="Correo electronico" type="email"
+                                    <label>{{ 'reservas.email' | transloco }}:</label>
+                                    <input class="form-control" placeholder="{{ 'reservas.email' | transloco }}" type="email"
                                     formControlName="correo"
                                     >
                                     <small *ngIf="campoValido('correo')" class="text-danger" >
-                                        El correo no es válido, debe ser obligatorio
+                                        {{ 'reservas.emailError' | transloco }}
                                     </small>
                                 </div>
                                 <div class="col-sm-12 col-md-6 col-lg-6 ">
-                                    <label>Telefono:</label>
-                                    <input class="form-control" placeholder="Telefono contacto" type="text"
+                                    <label>{{ 'reservas.telefono' | transloco }}:</label>
+                                    <input class="form-control" placeholder="{{ 'reservas.telefonoContacto' | transloco }}" type="text"
                                     formControlName="telefono"
                                     >
-                                    <small *ngIf="campoValido('apellidos')" class="text-danger" >
-                                        Este campo es obligatorio
+                                    <small *ngIf="campoValido('telefono')" class="text-danger" >
+                                        {{ 'reservas.campoObligatorio' | transloco }}
                                     </small>
                                 </div>
                             </div>
@@ -110,21 +137,21 @@
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-sm-12 col-md-6 col-lg-6">
-                                    <label>Fecha Prevista</label>
+                                    <label>{{ 'reservas.fechaPrevista' | transloco }}:</label>
                                     <input class="form-control" type="date"
                                     formControlName="fechaPrevista"
                                     >
-                                    <small *ngIf="campoValido('apellidos')" class="text-danger" >
-                                        Este campo es obligatorio
+                                    <small *ngIf="campoValido('fechaPrevista')" class="text-danger" >
+                                        {{ 'reservas.campoObligatorio' | transloco }}
                                     </small>
                                 </div>
                                 <div class="col-sm-12 col-md-6 col-lg-6 ">
-                                    <label>Número de Personas</label>
+                                    <label>{{ 'reservas.numeroPersonas' | transloco }}:</label>
                                     <input class="form-control" placeholder="1" type="number"
                                     formControlName="numPersonas"
                                     >
-                                    <small *ngIf="campoValido('apellidos')" class="text-danger" >
-                                        Este campo es obligatorio
+                                    <small *ngIf="campoValido('numPersonas')" class="text-danger" >
+                                        {{ 'reservas.campoObligatorio' | transloco }}
                                     </small>
                                 </div>
                             </div>
@@ -132,23 +159,23 @@
 
                         <div class="form-group">
                             <div class="col-sm-12">
-                                <label>Obervación adicional:</label>
-                                <input class="form-control" placeholder="Observacion" type="text"
+                                <label>{{ 'reservas.observacionPersonal' | transloco }}:</label>
+                                <input class="form-control" placeholder="{{ 'reservas.observacionPersonal' | transloco }}" type="text"
                                 formControlName="observacion"
                                 >
-                                <small *ngIf="campoValido('apellidos')" class="text-danger" >
-                                    Este campo es obligatorio
+                                <small *ngIf="campoValido('observacion')" class="text-danger" >
+                                    {{ 'reservas.campoObligatorio' | transloco }}
                                 </small>
                             </div>
                         </div>
                         <div class="row text-center">
 
                             <button type="submit" class="btn btn-light btn-radius btn-brd grd1">
-                                Enviar
+                                {{ 'reservas.enviar' | transloco}}
                             </button>
                             <button type="button" class="btn btn-light btn-radius btn-brd grd1" data-dismiss="modal"
                                 aria-hidden="true">
-                                Cancelar
+                                {{ 'reservas.cancelar' | transloco }}
                             </button>
 
                         </div>

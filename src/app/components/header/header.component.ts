@@ -12,6 +12,7 @@ export class HeaderComponent implements OnInit {
 
   public formSubmitted = false;
   public reservaForm : FormGroup;
+  public expanded:Boolean = false;
 
   constructor(
     private fb: FormBuilder,
@@ -34,7 +35,7 @@ export class HeaderComponent implements OnInit {
   enviarMsg(){
     this.formSubmitted = true;
     if( this.reservaForm.valid ){
-      console.log(this.reservaForm.value);
+      
       this.contactService.enviarCorreoReserva(this.reservaForm.value).subscribe(
         resp => {
           Swal.fire("El Reencuentro","Mensaje envido con exito","success")
@@ -53,6 +54,11 @@ export class HeaderComponent implements OnInit {
     }else{
       return false;
     }
+  }
+
+  collapsed(){
+    let foo = this.expanded;
+    this.expanded = foo === false ? true : false; 
   }
 
 }

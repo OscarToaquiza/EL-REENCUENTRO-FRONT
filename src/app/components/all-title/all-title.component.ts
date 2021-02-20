@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Title } from '@angular/platform-browser';
+import { Meta, MetaDefinition, Title } from '@angular/platform-browser';
 import { ActivationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { filter,map } from 'rxjs/operators';
@@ -13,11 +13,16 @@ export class AllTitleComponent {
 
   public titulosSubs$: Subscription;
 
-  constructor( private router:Router, private title: Title ) { 
+  constructor( private router:Router, private title: Title, private meta: Meta ) { 
 
    this.titulosSubs$ = this.getDataRouter().subscribe(
       data => {
         this.title.setTitle(data.titulo);
+          const metaTag: MetaDefinition = {
+            name: 'description',
+            content: data.descripcion
+          };
+          this.meta.updateTag(metaTag);
       }
     );
 

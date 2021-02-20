@@ -10,11 +10,8 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AllTitleComponent } from './components/all-title/all-title.component';
+import { TranslocoRootModule } from './transloco/transloco-root.module';
 
-// Page No-found
-
-// Pages of web site
-import { PagesModule } from './pages/pages.module';
 
 @NgModule({
   declarations: [
@@ -24,12 +21,12 @@ import { PagesModule } from './pages/pages.module';
     AllTitleComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
-    PagesModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    TranslocoRootModule
   ],
   providers: [],
   bootstrap: [AppComponent]

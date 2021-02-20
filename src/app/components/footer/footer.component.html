@@ -1,23 +1,17 @@
 <div class="parallax section dbcolor">
     <div class="container">
         <div class="row logos">
-            <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
-                <a href="#"><img src="assets/images/logo_01.png" alt="" class="img-repsonsive"></a>
+            <div class="col-md-3 col-sm-3 col-xs-6 col-6 wow fadeInUp">
+                <a routerLink="actividades-general/sendero-ecologico" ><img src="assets/images/icons/montana.svg" alt="" class="img-repsonsive"></a>
             </div>
-            <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
-                <a href="#"><img src="assets/images/logo_02.png" alt="" class="img-repsonsive"></a>
+            <div class="col-md-3 col-sm-3 col-xs-6 col-6 wow fadeInUp">
+                <a routerLink="actividades-general" ><img src="assets/images/icons/pescar.svg" alt="" class="img-repsonsive"></a>
             </div>
-            <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
-                <a href="#"><img src="assets/images/logo_03.png" alt="" class="img-repsonsive"></a>
-            </div>
-            <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
-                <a href="#"><img src="assets/images/logo_04.png" alt="" class="img-repsonsive"></a>
-            </div>
-            <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
-                <a href="#"><img src="assets/images/logo_05.png" alt="" class="img-repsonsive"></a>
-            </div>
-            <div class="col-md-2 col-sm-2 col-xs-6 wow fadeInUp">
-                <a href="#"><img src="assets/images/logo_06.png" alt="" class="img-repsonsive"></a>
+            <div class="col-md-3 col-sm-3 col-xs-6 col-6 wow fadeInUp">
+                <a routerLink="actividades-general/restaurante" ><img src="assets/images/icons/restaurante.svg" alt="" class="img-repsonsive"></a>
+            </div>   
+            <div class="col-md-3 col-sm-3 col-xs-6 col-6 wow fadeInUp">
+                <a routerLink="actividades-general/camping" ><img src="assets/images/icons/tienda.svg" alt="" class="img-repsonsive"></a>
             </div>
         </div><!-- end row -->
     </div><!-- end container -->
@@ -32,8 +26,7 @@
                         <h3>El Reencuentro</h3>
                     </div>
                     <p>
-                    El Reencuentro esta ubicado en el Cantón Mejía, barrio Puichig.
-                    Siempre enfocada al turismo rural con diversas actividades
+                    {{ 'footer.texto' | transloco }}
                     </p>   
 						
                 </div>
@@ -42,7 +35,7 @@
             <div class="col-lg-3 col-md-3 col-xs-12">
                 <div class="widget clearfix">
                     <div class="widget-title text-center">
-                        <h3>Redes Sociales</h3>
+                        <h3>{{ 'footer.redes' | transloco }}</h3>
                     </div>
                     <div class="footer-center">
                         <ul class="footer-links-soi">
@@ -67,7 +60,7 @@
             <div class="col-lg-4 col-md-4 col-xs-12">
                 <div class="widget clearfix">
                     <div class="widget-title">
-                        <h3>Detalles de Contacto</h3>
+                        <h3>{{ 'footer.detalleContacto' | transloco }}</h3>
                     </div>
                     <ul class="footer-links">
                         <li><a href="mailto:#">elreencuentroresservas@gmail.com</a></li>
@@ -80,7 +73,7 @@
             <div class="col-lg-2 col-md-2 col-xs-12">
                 <div class="widget clearfix">
                     <div class="text-center">
-                        <h4 style="color: white;" >Aceptamos todas las Tarjetas de Crédito</h4>
+                        <h4 style="color: white;" >{{ 'footer.aceptamosTarjetas' | transloco  }}</h4>
                     </div>
                     <div>
                         <img src="assets/images/tarjetas.jpg" alt="">
@@ -89,6 +82,7 @@
             </div><!-- end col -->
             
         </div><!-- end row -->
+
     </div><!-- end container -->
 </footer><!-- end footer -->
 
@@ -96,7 +90,7 @@
     <div class="container">
         <div class="footer-distributed">
             <div class="footer-center">                   
-                <p class="footer-company-name"> <a href="#">EL REENCUENTRO - 2020</a> Diseñado por : <a href="https://html.design/">Html Design</a> Desarrollado por: <a>O.M.T.C</a> </p>
+                <p class="footer-company-name"> <a href="#">EL REENCUENTRO - 2021</a> Diseñado por : <a href="https://html.design/">Html Design</a> Desarrollado por: <a>O.M.T.C</a> </p>
             </div>
         </div>
     </div><!-- end container -->

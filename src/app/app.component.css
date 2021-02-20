@@ -2,7 +2,7 @@
     position:fixed;
     width:60px;
     height:60px;
-    bottom:40px;
+    bottom:20px;
     right:15px;
     background-color:#25d366;
     color:#FFF;
@@ -19,5 +19,37 @@
   }
   
   .whatsapp-icon {
+    margin-top:13px;
+  }
+
+  .lng {
+    position:fixed;
+    width:40px;
+    height:40px;
+    bottom:20px;
+    left: 10px;;
+    color:#FFF;
+    border-radius:50px;
+    text-align:center;
+    font-size:30px;
+    z-index:100;
+  }
+
+  .imgLanguageEs{
+    background-image: url('/assets/images/flag-es.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-content: center;
+    border-radius: inherit;
+  }
+  .imgLanguageEn{
+    background-image: url('/assets/images/flag-uk.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-content: center;
+    border-radius: inherit;
+  }
+  
+  .lng-icon {
     margin-top:13px;
   }
