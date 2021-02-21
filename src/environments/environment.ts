@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   //base_url: 'http://el-reencuentro.com/api'
-  base_url: 'http://165.232.61.116:5000/api'
+  base_url: 'http://el-reencuentro.com/api'
   //base_url: 'http://localhost:5000/api'
 };
 
